@@ -1,0 +1,153 @@
+@import "vars.scss";
+@import "mixins.scss";
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+* {
+  box-sizing: border-box;
+  font-size: $font-size;
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+}
+
+nav {
+  width: 100%;
+  height: auto;
+  padding: 0 150px;
+  @include clearfix;
+  background-color: $basic-bkg-color;
+
+  .nav-left {
+    float: left;
+    padding: 5px;
+    img {
+      border-radius: 50%;
+      width: 30px;
+    }
+  }
+
+  .nav-right {
+    float: right;
+    margin-top: 5px;
+
+    ul {
+      list-style: none;
+
+      li {
+        display: inline-block;
+        padding: 0 10px;
+
+        a {
+          display: block;
+          height: 100%;
+          text-decoration: none;
+          color: $text-color;
+          padding: 8px;
+
+          &:hover {
+            background-color: aquamarine;
+            color: white;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+main {
+  width: 100%;
+  text-align: center;
+}
+
+.first.section {
+  background-color: $first-section-bkg;
+  height: 20vh;
+  position: relative;
+
+  h1 {
+    width: 100%;
+    top: 50%;
+    padding: 0 15px;
+    position: absolute;
+    color: $color-purple;
+  }
+}
+
+.second.section {
+  background-color: rgba($color-purple, 0.9);
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .container {
+    margin: 10px 0;
+    flex-basis: 40%;
+    align-items: center;
+    justify-self: center;
+
+    p {
+      color: rgb(250, 250, 250, 0.7);
+      font-weight: 550;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .img-box {
+      padding: 10px;
+      background-color: rgb(71, 34, 105, 0.7);
+      border-radius: 50%;
+      width: fit-content;
+      margin: 0 auto;
+    }
+    img {
+      vertical-align: middle;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.last.section {
+  width: 60%;
+  margin: 0 auto;
+
+  h2 {
+    margin-top: 10px;
+  }
+
+  p {
+    padding: 10px 0;
+  }
+
+  form {
+    background-color: rgb(216, 216, 216);
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+
+    input {
+      width: 48%;
+      margin: 10px 0;
+      padding: 3px;
+      border: none;
+    }
+
+    textarea {
+      border: none;
+      width: 97%;
+      border-radius: 5px;
+    }
+  }
+}
+
+@include phone-devices-query;
+@include big-screens-query;

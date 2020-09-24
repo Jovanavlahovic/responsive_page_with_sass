@@ -1,0 +1,63 @@
+@mixin clearfix {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+@mixin phone-devices-query {
+  @media only screen and (max-width: 720px) {
+    nav {
+      padding-bottom: 15px;
+
+      .nav-left {
+        float: none;
+        text-align: center;
+      }
+
+      .nav-right {
+        float: none;
+        text-align: center;
+        ul {
+          li {
+            display: block;
+          }
+        }
+      }
+    }
+
+    .second.section {
+      display: block;
+      padding: 30px;
+      height: fit-content;
+
+      .container:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+@mixin big-screens-query {
+  @media only screen and (min-width: 950px) {
+    .second.section {
+      padding: 20px 20%;
+      width: 100%;
+    }
+    .second.section .container {
+      float: left;
+      width: 50%;
+      text-align: center;
+      .img-box {
+        float: left;
+        margin: 0 15px;
+      }
+
+      p {
+        padding-left: 10px;
+        text-align: left;
+      }
+    }
+  }
+}
